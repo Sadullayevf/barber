@@ -1,0 +1,45 @@
+.card {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05), rgba(255, 215, 122, 0.05));
+  color: #f2f2f2;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 215, 122, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.card.selected {
+  border-color: #ffd77a;
+  box-shadow: 0 0 0 1px rgba(255, 215, 122, 0.4);
+}
+
+.card-content {
+  padding: 0.95rem;
+}
+
+.card-content p {
+  color: #d0d0d0;
+  margin-bottom: 0.4rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.service-card {
+  padding: 0.4rem;
+}
+
+.service-grid .service-card {
+  min-height: 155px;
+}

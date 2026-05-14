@@ -1,0 +1,121 @@
+.hero {
+  padding: clamp(1.2rem, 4vw, 2.2rem);
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 0.55rem;
+}
+
+.hero p {
+  color: var(--subtext);
+}
+
+.filters {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 0.8rem;
+  padding: 0.85rem;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+  padding: 0.65rem 0.8rem;
+}
+
+.barber-premium-card {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.3));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.barber-premium-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at top right, rgba(188, 138, 74, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.barber-premium-card:hover {
+  box-shadow: 0 15px 40px rgba(188, 138, 74, 0.25);
+  border-color: rgba(188, 138, 74, 0.4);
+}
+
+.barber-premium-card:hover::after {
+  opacity: 1;
+}
+
+.barber-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.barber-premium-card:hover .barber-image {
+  transform: scale(1.08);
+}
+
+.card-body {
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 20%, rgba(255,255,255,1) 100%);
+}
+
+.card-body h3 {
+  font-size: 1.15rem;
+}
+
+.card-body p {
+  color: var(--subtext);
+  font-size: 0.95rem;
+}
+
+.book-hover-btn {
+  margin-top: 0.3rem;
+  display: inline-block;
+  width: fit-content;
+  padding: 0.6rem 0.95rem;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 0.25s ease;
+}
+
+.barber-premium-card:hover .book-hover-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}
